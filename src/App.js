@@ -1,25 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './index.css';
+import Heading from './Heading';
+import Card from './Cards';
+import Sdata from './Sdata';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <Heading />
+
+  {
+   Sdata.map((val)=>{
+    return (
+    <Card 
+      key={val.id}
+      imgsrc={val.imgsrc} 
+      title= {val.title}
+      sname={val.sname}
+      link={val.link} 
+    />
+  );}) }
+  </>
   );
 }
 
